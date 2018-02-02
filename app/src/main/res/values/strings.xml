@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homi</string>
+    <string name="Email">Email</string>
+    <string name="Parola">Parola</string>
+    <string name="cikisyap">Çıkış Yap</string>
+    <string name="kullaniciSil">Kullanıcıyı Sil</string>
+    <string name="title_activity_anasayfa">Anasayfa</string>
+    <string name="title_activity_ansayfa">Ansayfa</string>
+    <string name="title_activity_in_grup">InGrupActivity</string>
+</resources>

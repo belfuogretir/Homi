@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <!-- android:src="@drawable/hqdefault"
+     android:layout_marginBottom="30dp"-->
+
+
+
+    <EditText
+        android:id="@+id/uyeEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress" />
+
+
+
+
+
+    <EditText
+        android:id="@+id/uyeParola"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/Parola"
+        android:inputType="textPassword" />
+
+
+
+    <Button
+        android:id="@+id/yeniUyeButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/uyeButtonColor"
+        android:text="Üye Ol!"
+        android:textColor="#FFFF" />
+
+
+    <Button
+        android:id="@+id/uyeGirisButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:text="Zaten üye misin?"
+        android:textAllCaps="false"
+        android:textColor="#FFFF" />
+
+
+</LinearLayout>

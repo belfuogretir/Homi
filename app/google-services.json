@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "353985663929",
+    "firebase_url": "https://homi-830f0.firebaseio.com",
+    "project_id": "homi-830f0",
+    "storage_bucket": "homi-830f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353985663929:android:af310e7f8ae7be1c",
+        "android_client_info": {
+          "package_name": "com.example.belfu.homi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353985663929-5pi8210jv7pqi6mmregpuhr4bke6l1vs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.belfu.homi",
+            "certificate_hash": "6a2a141b95a42842eb23c6d6f499bc3d78f5e16d"
+          }
+        },
+        {
+          "client_id": "353985663929-1hbbv10e7crsmsum4c9drpnkn9b76uca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-u58CQb81dTLkB7CMS0RBBoZ_6lWigWo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353985663929-1hbbv10e7crsmsum4c9drpnkn9b76uca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
