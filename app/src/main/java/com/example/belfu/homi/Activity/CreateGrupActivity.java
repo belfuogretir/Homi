@@ -36,6 +36,8 @@ import java.util.Date;
 
 public class CreateGrupActivity extends AppCompatActivity {
 
+    //deneme
+
     EditText etName;
     EditText etMail;
     Button btnSave;
