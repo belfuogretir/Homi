@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F6E3CE"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.belfu.homi.NewPassActivity">
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <Button
+        android:id="@+id/btn_reset_password"
+        android:layout_width="150dp"
+        android:layout_height="33dp"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:background="#FA8258"
+        android:text="Şifreyi Sıfırla"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_reset_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:background="@null"
+        android:text="Geri" />
+
+
+</RelativeLayout>

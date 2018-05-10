@@ -1,87 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/backgroundColor">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F6E3CE"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="match_parent"
+        android:id="@+id/girisEmail"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="10dp"
-        android:hint="@string/Email"
-        android:id="@+id/girisEmail" />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:layout_above="@+id/girisParola"
+        android:layout_alignLeft="@+id/girisParola"
+        android:layout_alignStart="@+id/girisParola"
+        android:layout_marginBottom="11dp"
         android:ems="10"
-        android:layout_marginTop="10dp"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <EditText
         android:id="@+id/girisParola"
-        android:hint="@string/Parola" />
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/girisButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="129dp" />
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <Button
-            android:text="Giriş Yap"
-            android:id="@+id/girisButton"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:textColor="#FFFF"
-            android:textAllCaps="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/uyeButtonColor"/>
-
-        <Button
-            android:text="Üye Ol!"
-            android:id="@+id/uyeOlButton"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="#FFFF"
-            android:background="@color/uyeButtonColor"/>
-    </LinearLayout>
 
     <Button
-        android:text="Şifreni mi unuttun?"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
+        android:id="@+id/girisButton"
+        android:layout_width="150dp"
+        android:layout_height="33dp"
+        android:layout_above="@+id/yeniSifreButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:background="#FA8258"
+        android:text="Giriş"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <Button
         android:id="@+id/yeniSifreButton"
+        android:layout_width="150dp"
+        android:layout_height="23dp"
+        android:layout_above="@+id/textView"
+        android:layout_alignLeft="@+id/sign_in_button"
+        android:layout_alignStart="@+id/sign_in_button"
+        android:layout_marginBottom="52dp"
         android:background="@null"
-        android:textColor="#FFFF"
-        android:layout_marginBottom="8dp"
-        />
+        android:text="Şifreni mi unuttun?"
+        android:textAllCaps="false"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="260dp" />
+
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VEYA"
-        android:gravity="center"
-        android:textColor="@color/colorPrimary"/>
+        android:layout_above="@+id/sign_in_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:text="Veya"
+        android:textColor="#000000"
+        tools:ignore="MissingConstraints"/>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="15dp" />
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/uyeOlButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintEnd_toEndOf="@+id/girisParola"
+        app:layout_constraintHorizontal_bias="1.235"
+        app:layout_constraintStart_toStartOf="@+id/girisParola"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <Button
+        android:id="@+id/uyeOlButton"
+        android:layout_width="180dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@null"
+        android:text="Üye Ol"
+        android:textAllCaps="false"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="472dp" />
 
 
-
-</LinearLayout>
+</RelativeLayout>

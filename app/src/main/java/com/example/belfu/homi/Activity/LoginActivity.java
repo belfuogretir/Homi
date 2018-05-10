@@ -1,4 +1,4 @@
-package com.example.belfu.homi;
+package com.example.belfu.homi.Activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.belfu.homi.Model.User;
+import com.example.belfu.homi.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -23,7 +25,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.onesignal.OneSignal;
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
@@ -32,12 +41,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
     private GoogleApiClient mApiClient;
+    FirebaseDatabase database;
+    final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.wtf("Login:","Burda");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         Button yeniSifreButton = (Button) findViewById(R.id.yeniSifreButton);
         Button uyeOlButton = (Button) findViewById(R.id.uyeOlButton);
@@ -64,7 +77,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
 
         if(auth.getCurrentUser() != null){
-            Log.wtf("getCurrent","burda");
             startActivity(new Intent(LoginActivity.this,MainActivity.class));
         }
 
@@ -158,6 +170,26 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    database = FirebaseDatabase.getInstance();
+                                    DatabaseReference dbRef = database.getReference("users");
+                                    final String id = OneSignal.getPermissionSubscriptionState().getSubscriptionStatus().getUserId();
+                                    dbRef.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            for(DataSnapshot ds:dataSnapshot.getChildren()){
+                                                if(!ds.getKey().equals("updatedTime")) {
+                                                    User user = ds.getValue(User.class);
+                                                    if (user.getEmail().equals(firebaseUser.getEmail())) {
+                                                        ds.getRef().child("oneSignalId").setValue(id);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+
+                                        }
+                                    });
                                     startActivity(new Intent(LoginActivity.this,MainActivity.class));
                                 }
                                 else {

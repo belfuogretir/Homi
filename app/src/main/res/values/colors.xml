@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="backgroundColor">#eedd82</color>
     <color name="uyeButtonColor">#Ffcc00</color>
+    <color name="ProgressBar">#f6cece</color>
+    <color name="Progress">#f55959</color>
+    <color name="Progress2">#B70707</color>
 </resources>
